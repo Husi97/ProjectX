@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+</head>
+<body>
+    <h1>Users</h1>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    <button id="addUser" class="float-left submit-button">add User</button>
+    <button id="removeUser" class="float-left submit-button">remove User</button>
+    <button id="cv" class="float-left submit-button">generate CV</button>
+    <ul>
+    {% for cv in cvs %}
+        <li>{{ cv.firstname }} - {{ cv.lastname }} - {{ cv.birthday }} - {{ cv.address }} - {{ cv.phone }} - {{ cv.job }} - {{ cv.education }} - {{ cv.summery }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
+
+<script type="text/javascript">
+    document.getElementById("addUser").onclick = function () {
+        location.href = "add_user";
+    };
+    document.getElementById("cv").onclick = function () {
+        location.href = "generate_cv";
+    };
+    document.getElementById("removeUser").onclick = function () {
+        location.href = "remove_user";
+    };
+</script>

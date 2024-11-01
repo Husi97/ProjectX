@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Remove User</title>
+</head>
+<body>
+<h1>Remove User</h1>
+<form action="{{ url_for('remove_user') }}" method="post">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required>
+  <br>
+  <br>
+  <input type="submit" value="Remove!">
+</form>
+<ul>
+  {% for user in users %}
+  <li>{{ user.username }} - {{ user.email }}</li>
+  {% endfor %}
+</ul>
+</body>
+</html>
